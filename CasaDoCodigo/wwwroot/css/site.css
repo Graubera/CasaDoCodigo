@@ -33,3 +33,18 @@
         display: none;
     }
 }
+
+left.carousel-control,
+right.carousel-control {
+    background-image: none;
+}
+
+.main-icon {
+    background: url('../images/produtos/logo.png');
+    height: 55px;
+    width: 215px;    
+}
+.navbar-inverse {
+    background-color: #f8965d;
+    border-color: transparent;
+}
