@@ -1,36 +1,114 @@
-﻿@{ 
+﻿@{
     ViewData["Title"] = "Carrossel";
 }
 <h3>Catálogo</h3>
-<div id="my-carousel" class="carousel slide" data-ride="carousel">
+<div id="my-carousel" class="carousel slide teste" data-ride="carousel">
     <!-- Indicators -->
-    <ol class="carousel-indicators">
+    @*<ol class="carousel-indicators">
         <li data-target="#my-carousel" data-slide-to="0" class="active"></li>
         <li data-target="#my-carousel" data-slide-to="1"></li>
         <li data-target="#my-carousel" data-slide-to="2"></li>
-    </ol>
+    </ol>*@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <img src="~/images/produtos/large_1.jpg" />
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel panel-default ">
+                        <div class="panel-body">
+                            <img src="~/images/produtos/large_1.jpg" />
+                        </div>
+                        <div class="panel-footer">
+                            <div>Camiseta Error 404</div>
+                            <div>59,90</div>
+                            <div class="text-center">@Html.ActionLink("Adicionar", "Carrinho", "Pedido") </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="panel-footer">
-                    <div>Camiseta Error 404</div>
-                    <div>59,90</div>
+                <div class="col-md-3">
+                    <div class="panel panel-default ">
+                        <div class="panel-body">
+                            <img src="~/images/produtos/large_1.jpg" />
+                        </div>
+                        <div class="panel-footer">
+                            <div>Camiseta Error 404</div>
+                            <div>59,90</div>
+                            <div class="text-center">@Html.ActionLink("Adicionar", "Carrinho", "Pedido") </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default ">
+                        <div class="panel-body">
+                            <img src="~/images/produtos/large_1.jpg" />
+                        </div>
+                        <div class="panel-footer">
+                            <div>Camiseta Error 404</div>
+                            <div>59,90</div>
+                            <div class="text-center">@Html.ActionLink("Adicionar", "Carrinho", "Pedido") </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default ">
+                        <div class="panel-body">
+                            <img src="~/images/produtos/large_1.jpg" />
+                        </div>
+                        <div class="panel-footer">
+                            <div>Camiseta Error 404</div>
+                            <div>59,90</div>
+                            <div class="text-center">@Html.ActionLink("Adicionar", "Carrinho", "Pedido") </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="item">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <img src="~/images/produtos/large_2.jpg" />
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="panel panel-defautl">
+                        <div class="panel-body">
+                            <img src="~/images/produtos/large_1.jpg" />
+                        </div>
+                        <div class="panel-footer">
+                            <div>Camiseta Error 404</div>
+                            <div>R$ 59,90</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="panel-footer">
-                    <div>Camiseta May the Code</div>
-                    <div>59,90</div>
+                <div class="col-md-3">
+                    <div class="panel panel-defautl">
+                        <div class="panel-body">
+                            <img src="~/images/produtos/large_2.jpg" />
+                        </div>
+                        <div class="panel-footer">
+                            <div>Camiseta Error 404</div>
+                            <div>R$ 59,90</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-defautl">
+                        <div class="panel-body">
+                            <img src="~/images/produtos/large_3.jpg" />
+                        </div>
+                        <div class="panel-footer">
+                            <div>Camiseta Error 404</div>
+                            <div>R$ 59,90</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-defautl">
+                        <div class="panel-body">
+                            <img src="~/images/produtos/large_4.jpg" />
+                        </div>
+                        <div class="panel-footer">
+                            <div>Camiseta Error 404</div>
+                            <div>R$ 59,90</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
