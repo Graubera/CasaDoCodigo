@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Carrinho";
 }
-
+@model List<ItemPedido>
 <h3>Meu Carrinho</h3>
 
 <div class="panel panel-default">
@@ -19,37 +19,41 @@
         </div>
     </div>
     <div class="panel-body">
-        <div class="row">
-            <div class="col-xs-2">
-                <img src="~/images/produtos/small_1.jpg" class="img-responsive" />
+        @foreach (ItemPedido itemPedido in Model)
+        {
+            <div class="row">
+                <div class="col-xs-2">
+                    <img src="~/images/produtos/small_@(itemPedido.Id).jpg" class="img-responsive" />
+                </div>
+                <div class="col-xs-4">
+                    <span class="pull-left">
+                        @itemPedido.Produto.Nome
+                    </span>
+                </div>
+                <div class="col-xs-2">
+                    @itemPedido.PrecoUnitario
+                </div>
+                <div class="col-xs-2">
+                    @itemPedido.Quantidade
+                </div>
+                <div class="col-xs-2">
+                    <span class="pull-right">@itemPedido.Subtotal</span>
+                </div>
             </div>
-            <div class="col-xs-4">
-                <span class="pull-left">
-                    DESCRIÇÃO
-                </span>
-            </div>
-            <div class="col-xs-2">
-                2,00
-            </div>
-            <div class="col-xs-2">
-                2
-            </div>
-            <div class="col-xs-2">
-                <span class="pull-right">4,00</span>
-            </div>
-        </div>
+        }
     </div>
     <div class="panel-footer">
         <div class="row">
-            <div class="col-xs-10">TOTAL</div>
+            <div class="col-xs-10">Total: @Model.Count() @(Model.Count() < 2 ? "item" : "itens")</div>
             <div class="col-xs-2">
-                <span class="pull-right">R$:100</span>
+                <span class="pull-right">Total: R$ @Model.Sum(i => i.Subtotal)</span>
             </div>
         </div>
-    </div>    
+    </div>
 </div>
 <div class="row">
     <div class="col-xs-12">
-        @Html.ActionLink("Finalizar", "Carrinho", "Pedido", null, new { @class = "btn btn-success pull-right" })
+        <a asp-action="Resumo" asp-controller="Pedido" class="btn btn-success pull-right">Finalizar</a>
+        @*@Html.ActionLink("Finalizar", "Resumo", "Pedido", null, new { @class = "btn btn-success pull-right" })*@
     </div>
 </div>
