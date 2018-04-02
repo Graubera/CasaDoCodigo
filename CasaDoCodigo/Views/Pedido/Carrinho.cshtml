@@ -2,15 +2,15 @@
 @{
     ViewData["Title"] = "Carrinho";
 }
-@model List<ItemPedido>
+@model CarrinhoViewModel
 <h3>Meu Carrinho</h3>
 
 <div class="panel panel-default">
     <div class="panel-heading">
         <div class="row">
             <div class="col-xs-6">ITEM</div>
-            <div class="col-xs-2">PR. UNIT</div>
-            <div class="col-xs-2">QUANT</div>
+            <div class="col-xs-2 text-center">PR. UNIT</div>
+            <div class="col-xs-2 text-center">QUANT</div>
             <div class="col-xs-2">
                 <span class="pull-right">
                     SUBTOTAL
@@ -19,9 +19,9 @@
         </div>
     </div>
     <div class="panel-body">
-        @foreach (ItemPedido itemPedido in Model)
+        @foreach (ItemPedido itemPedido in Model.Itens)
         {
-            <div class="row">
+            <div class="row row-center">
                 <div class="col-xs-2">
                     <img src="~/images/produtos/small_@(itemPedido.Id).jpg" class="img-responsive" />
                 </div>
@@ -30,10 +30,10 @@
                         @itemPedido.Produto.Nome
                     </span>
                 </div>
-                <div class="col-xs-2">
+                <div class="col-xs-2 text-center">
                     @itemPedido.PrecoUnitario
                 </div>
-                <div class="col-xs-2">
+                <div class="col-xs-2 text-center">
                     @itemPedido.Quantidade
                 </div>
                 <div class="col-xs-2">
@@ -44,9 +44,9 @@
     </div>
     <div class="panel-footer">
         <div class="row">
-            <div class="col-xs-10">Total: @Model.Count() @(Model.Count() < 2 ? "item" : "itens")</div>
+            <div class="col-xs-10">Total: @Model.Itens.Count() @(Model.Itens.Count() < 2 ? "item" : "itens")</div>
             <div class="col-xs-2">
-                <span class="pull-right">Total: R$ @Model.Sum(i => i.Subtotal)</span>
+                <span class="pull-right">Total: R$ @Model.ValorTotal</span>
             </div>
         </div>
     </div>

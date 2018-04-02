@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Resumo";
 }
-
+@model CarrinhoViewModel
 <h2>Resumo</h2>
 <div class="panel panel-default">
     <div class="panel-body">
@@ -19,7 +19,7 @@
                 <div> 44123-4588 </div>
             </div>
             <div class="col-xs-3">
-                <div>a@b.com.br</div>
+                <div class=" row-center">a@b.com.br</div>
             </div>
             <div class="col-xs-6">
                 <h3>Endereço de entrega</h3>
@@ -30,12 +30,21 @@
         <div class="row">
             <div class="col-xs-10">
                 <h3>Item</h3>
-                <div>Rest</div>
             </div>
             <div class="col-xs-2">
                 <h3>Quantidade</h3>
-                <div class="pull-right">1</div>
             </div>
         </div>
+        @foreach (ItemPedido item in Model.Itens)
+        {
+            <div class="row">
+                <div class="col-xs-10">
+                    <div>@item.Produto.Nome</div>
+                </div>
+                <div class="col-xs-2">
+                    <div class="pull-right">@item.Quantidade</div>
+                </div>
+            </div>
+        }
     </div>
 </div>
