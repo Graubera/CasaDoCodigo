@@ -7,15 +7,18 @@ namespace CasaDoCodigo.Models
 {
     public class Produto
     {
-        public int Id { get; private set; }
-        public string Nome { get; private set; }
-        public decimal Preco { get; set; }
-
-        public Produto(int id, String nome, decimal preco)
+        public Produto(int id, string nome, decimal preco) : this(nome, preco)
         {
             this.Id = id;
+        }
+
+        public Produto(string nome, decimal preco)
+        {
             this.Nome = nome;
             this.Preco = preco;
         }
+        public int Id { get; private set; }
+        public string Nome { get; private set; }
+        public decimal Preco { get; set; }        
     }
 }
