@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CasaDoCodigo.DAL;
+using CasaDoCodigo.DAO;
+using CasaDoCodigo.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -24,10 +26,12 @@ namespace CasaDoCodigo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            string connectionString = Configuration.GetSection("ConnectionStrings").GetValue<string>("Default");             
+            string connectionString = Configuration.GetSection("ConnectionStrings").GetValue<string>("Default");
             services.AddDbContext<Context>(options => options.UseSqlServer(connectionString));
 
-            services.AddTransient<IDataService, DataService>();
+            //services.AddTransient<IDataService, DataService>();
+            services.AddTransient<IProdutoDAO, ProdutoDAO>();
+            services.AddTransient<IItemPedidoDAO, ItemPedidoDAO>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,8 +56,8 @@ namespace CasaDoCodigo
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
 
-            IDataService dataService = serviceProvider.GetService<IDataService>();
-            dataService.InicializaDB();
+            //IDataService dataService = serviceProvider.GetService<IDataService>();
+            //dataService.InicializaDB();
         }
     }
 }

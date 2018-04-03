@@ -7,12 +7,12 @@ namespace CasaDoCodigo.Models.ViewModel
 {
     public class CarrinhoViewModel
     {
-        public CarrinhoViewModel(List<ItemPedido> itens)
+        public CarrinhoViewModel(IList<ItemPedido> itens)
         {
             this.Itens = itens;
         }
 
-        public List<ItemPedido> Itens { get; private set; }
+        public IList<ItemPedido> Itens { get; private set; }
         public decimal ValorTotal
         {
             get

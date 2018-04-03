@@ -7,6 +7,10 @@ namespace CasaDoCodigo.Models
 {
     public class ItemPedido
     {
+        public ItemPedido()
+        {
+
+        }
         public ItemPedido(int id, Produto produto, int quantidade) : this(produto, quantidade)
         {
             this.Id = id;

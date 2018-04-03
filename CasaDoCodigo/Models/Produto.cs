@@ -5,8 +5,12 @@ using System.Threading.Tasks;
 
 namespace CasaDoCodigo.Models
 {
-    public class Produto
+    public class Produto  
     {
+        public Produto()
+        {
+
+        }
         public Produto(int id, string nome, decimal preco) : this(nome, preco)
         {
             this.Id = id;
