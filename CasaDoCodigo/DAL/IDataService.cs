@@ -1,4 +1,7 @@
-﻿namespace CasaDoCodigo.DAL
+﻿//=======================================================================================
+//  USELESS CODE TO TEST 
+//=======================================================================================
+namespace CasaDoCodigo.DAL
 {
     public interface IDataService
     {
