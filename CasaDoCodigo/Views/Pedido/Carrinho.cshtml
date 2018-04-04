@@ -21,7 +21,7 @@
     <div class="panel-body">
         @foreach (ItemPedido itemPedido in Model.Itens)
         {
-            <div class="row row-center">
+            <div class="row row-center" item-id="@itemPedido.Id">
                 <div class="col-xs-2">
                     <img src="~/images/produtos/small_@(itemPedido.Id).jpg" class="img-responsive" />
                 </div>
@@ -34,7 +34,21 @@
                     @itemPedido.PrecoUnitario
                 </div>
                 <div class="col-xs-2 text-center">
-                    @itemPedido.Quantidade
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" onclick="clickDecremento(this)">
+                                <span class="glyphicon-minus">
+                                </span>
+                            </button>
+                        </span>
+                        <input class="form-control text-center" type="text" value="@itemPedido.Quantidade" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" onclick="clickIncremento(@(itemPedido.Id))">
+                                <span class="glyphicon-plus">
+                                </span>
+                            </button>
+                        </span>
+                    </div>
                 </div>
                 <div class="col-xs-2">
                     <span class="pull-right">@itemPedido.Subtotal</span>
@@ -57,3 +71,8 @@
         @*@Html.ActionLink("Finalizar", "Resumo", "Pedido", null, new { @class = "btn btn-success pull-right" })*@
     </div>
 </div>
+
+@section Scripts
+{
+    <script src="~/js/Carrinho.js"></script>
+}

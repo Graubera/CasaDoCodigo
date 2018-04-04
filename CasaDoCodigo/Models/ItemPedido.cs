@@ -22,10 +22,10 @@ namespace CasaDoCodigo.Models
             this.Quantidade = quantidade;
             this.PrecoUnitario = produto.Preco;
         }
-        public int Id { get; private set; }
-        public Produto Produto { get; private set; }
+        public int Id { get; set; }
+        public Produto Produto { get; set; }
         public int Quantidade { get; set; }
-        public decimal PrecoUnitario { get; private set; }
+        public decimal PrecoUnitario { get; set; }
         public decimal Subtotal { get { return Quantidade * PrecoUnitario; } }
 
 
